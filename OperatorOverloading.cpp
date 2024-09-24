@@ -15,7 +15,7 @@ class Date{
 };
 
 int main(){
-		
+		int date1;
 		Date date1{24,9,2024};
 		date1++;
 		date1.printDate(); // 25-9-2024
