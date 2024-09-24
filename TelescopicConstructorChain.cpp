@@ -1,5 +1,7 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
+#include <string>
+using namespace std;
 class BankCustomer{
     private:
         string name;
@@ -9,35 +11,45 @@ class BankCustomer{
         string phoneNumber;
     
     public:
-    BankCustomer() {}
-    //Compile Time Polymorphism , constructor Overloading
-    BankCustomer(string nameArg,string adharNumberArg,string panNumberArg){
-        this->name=nameArg;
-        this->adharNumber=adharNumberArg;
-        this->panNumber=panNumberArg;
+    BankCustomer(){
+         this->name="";
+        this->adharNumber="";
+        this->panNumber="";
         this->emailId="";
         this->phoneNumber="";
+    }
+    BankCustomer(string nameArg, string adharNumberArg, string panNumberArg):BankCustomer(){
+        this->name = nameArg;
+        this->adharNumber = adharNumberArg;
+        this->panNumber = panNumberArg;
+        
         
     }
-       BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg,string phoneArg){
-        this->name=nameArg;
-        this->adharNumber=adharNumberArg;
-        this->panNumber=panNumberArg;
-        this->emailId=emailArg;
+   BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string phoneArg):BankCustomer(nameArg,adharNumberArg,panNumberArg){
+
         this->phoneNumber=phoneArg;
+    }
+  BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string phoneArg,string emailIdArg):BankCustomer(nameArg,adharNumberArg,panNumberArg,phoneArg){
+
+        this->emailId=emailIdArg;
         
     }
- 
     
-    void printCustomerInfo(){
-            //cout<<
-    }
-    
+        void printInfo() {
+            cout<<this->name<<endl;
+            cout<<this->adharNumber<<endl;
+            cout<<this->panNumber<<endl;
+            cout<<this->emailId<<endl;
+            cout<<this->phoneNumber<<endl;
+            
+        }
+      
 };
 
 int main() {
-    // Write C++ code here
-    std::cout << "Try programiz.pro";
-    
-    return 0;
+    BankCustomer information("megha","89833e3","panNumber113","","gmail");
+    information.printInfo();
+     
+
+     return 0;
 }
